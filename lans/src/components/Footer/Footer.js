@@ -1,8 +1,13 @@
 import React from 'react'
+import "./Footer.css"
+// import Logo from "../../images/logo.png"
 
 const Footer = () => {
   return (
-    <div>Footer</div>
+    <footer className="footer">
+    <h1>BLOGGY</h1>
+    <span>Made with❤️ <b>BLOGGY</b></span>
+    </footer>
   )
 }
 
