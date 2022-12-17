@@ -1,11 +1,14 @@
+
+
 import "./write.css"
 import {GrAdd} from "react-icons/gr"
+import img from "./imageee.png"
 export default function Write() {
   return (
     <div className="write">
         <img
           className="writeImg" 
-         src="https://www.shutterstock.com/image-photo/blogging-blog-word-coder-coding-260nw-520314613.jpg" alt="" />
+         src={img} alt="" />
       <form className="writeForm">
         <div className="writeFormGroup">
             <label htmlFor="fileInput">
