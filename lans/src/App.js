@@ -14,8 +14,6 @@ import Navbar from "./components/Navbar/Navbar";
 import Home from "./pages/Home/Home";
 import Single from "./pages/single/Single";
 import Write from "./pages/write/write";
-import Login from "./pages/login"
-import Register from "./pages/register"
 import Settings from "./pages/settings/settings";
 import Login from "./pages/login"
 import Register from "./pages/register"

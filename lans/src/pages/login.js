@@ -46,9 +46,9 @@ try{
         />
       </center>
       <center className="mt-3">
-        <button className="text-white w-60 py-1 hover:bg-gradient-to-tr from-black to-blue-800  font-bold border rounded-lg hover:border-white shadow-gray-300 shadow-2xl hover:white content-center font-serif ease-out hover:translate-y-1 transition-all mt-2" type="submit" onSubmit={handleSubmit} disabled={isFetching}>
+        <button className="text-white w-60 py-1 hover:bg-gradient-to-tr from-black to-blue-800  font-bold border rounded-lg hover:border-white shadow-gray-300 shadow-2xl hover:white content-center font-serif ease-out hover:translate-y-1 transition-all mt-2" type="submit" onClick={handleSubmit} disabled={isFetching}>
 
-          Submit
+          Login
         </button>
       </center>
     </div>
