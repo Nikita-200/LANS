@@ -16,11 +16,15 @@ import Single from "./pages/single/Single";
 import Write from "./pages/write/write";
 import Login from "./pages/login"
 import Register from "./pages/register"
+import Settings from "./pages/settings/settings";
+import Login from "./pages/login"
+import Register from "./pages/register"
 
 
 
 
 const Layout = ()=>{
+  const { user } = useContext(Context);
   return (
     <div className="app">
         <Navbar/>
@@ -47,6 +51,10 @@ const router=createBrowserRouter([
       {
         path:"/write",
         element:<Write/>
+       },
+       {
+        path:"/settings",
+        element:<Settings/>
        }
 
       
@@ -55,12 +63,13 @@ const router=createBrowserRouter([
   {
     path:"/login",
     element:<Login/>
-  },
-  {
+   },
+   {
     path:"/register",
     element:<Register/>
-  },
-  
+   }
+
+
 ])
 
 function App() {
