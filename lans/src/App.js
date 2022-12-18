@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { Context } from "./context/Context";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -36,10 +38,10 @@ const router=createBrowserRouter([
         path:"/",
         element:<Home/>
       },
-      {
-        path:"/post/:id",
-        element:<Single/>
-      }
+      // {
+      //   path:"/post/:id",
+      //   element:<Single/>
+      // }
       
     ]
   },
@@ -47,6 +49,8 @@ const router=createBrowserRouter([
 ])
 
 function App() {
+
+  const { user } = useContext(Context);
   return (
     <div className="App">
         <RouterProvider router={router} />
