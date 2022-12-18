@@ -1,3 +1,5 @@
+import { useContext } from "react";
+import { Context } from "./context/Context";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -42,7 +44,7 @@ const router=createBrowserRouter([
       {
         path:"/write",
         element:<Write/>
-      }
+       }
 
       
     ]
@@ -51,6 +53,8 @@ const router=createBrowserRouter([
 ])
 
 function App() {
+
+  const { user } = useContext(Context);
   return (
     <div className="App">
         <RouterProvider router={router} />

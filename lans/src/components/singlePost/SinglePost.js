@@ -15,7 +15,7 @@ export default function SinglePost() {
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [updateMode, setUpdateMode] = useState(false);
-  const PF = "http://localhost:5000/images/";
+  const PF = "http://localhost:8000/images/";
   useEffect(() => {
     const getPost = async () => {
       const res = await axios.get("/posts/" + path);
