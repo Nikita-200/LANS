@@ -1,3 +1,5 @@
+
+
 import "./write.css"
 import {GrAdd} from "react-icons/gr"
 import { useContext, useState } from "react"
@@ -53,5 +55,5 @@ export default function Write() {
 
       </form>
     </div>
-  )
+  );
 }
