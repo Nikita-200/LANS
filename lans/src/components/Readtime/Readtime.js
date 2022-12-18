@@ -5,7 +5,6 @@
 // import "./styles.css";
 // import SinglePost from '../singlePost/SinglePost'
 
-// import Article from "./article";
 
 // const WORDS_PER_MINUTE = 250;
 

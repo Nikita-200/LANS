@@ -3,20 +3,23 @@ import "./singlePost.css"
 import Img from "./avatar.jpg";
 import {BiEdit}  from "react-icons/bi"
 import {RiDeleteBin6Line} from "react-icons/ri"
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
-import { Context } from '../../context/Context';
+import {Context} from '../../context/Context'
+
 
 export default function SinglePost() {
   const location = useLocation()
-  const path=location.pathname.split("/")[2]
+  const path=location.pathname.split("/")[2];
+  const PF = "http://localhost:8001/images/";
   const { user } = useContext(Context);
   const [post, setPost] = useState({});
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [updateMode, setUpdateMode] = useState(false);
-  const PF = "http://localhost:8001/images/";
+  const navigate= useNavigate()
+  
   useEffect(() => {
     const getPost = async () => {
       const res = await axios.get("/posts/" + path);
@@ -31,7 +34,7 @@ export default function SinglePost() {
       await axios.delete(`/posts/${post._id}`, {
         data: { username: user.username },
       });
-      window.location.replace("/");
+      navigate("/");
     } catch (err) {}
   };
 
@@ -49,7 +52,7 @@ export default function SinglePost() {
   return (
     <div className='singlePost'>
       <div className='singlePostWrapper'>
-      {post.photo&&(<img
+      {post.photo && (<img
         src={PF+post.photo} alt="avatar" className='singlePostImg'/>)}
         {updateMode ? (
           <input

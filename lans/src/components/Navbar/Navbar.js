@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import './Navbar.scss'
 
 const Navbar = () => {
+  const PF = "http://localhost:5000/images/"
   const { user, dispatch } = useContext(Context);
 
 const handleLogout=()=>{
@@ -31,10 +32,10 @@ const handleLogout=()=>{
               <Link className='link' to="/">Contact</Link>
             </div>
             <div className="item">
-              <Link className='link' to="/">Write</Link>
+              <Link className='link' to="/write">Write</Link>
             </div>
             <div className="item">
-              <Link className='link' to="/" onClick={handleLogout}>{user && "LOGOUT"}Log</Link>
+              <Link className='link' to="/" onClick={handleLogout}>{user && "LOGOUT"}</Link>
             </div>
             
             
@@ -42,7 +43,7 @@ const handleLogout=()=>{
           <Link className="link" to="/settings">
             <img
               className="topImg"
-              src="https://images.pexels.com/photos/1858175/pexels-photo-1858175.jpeg?auto=compress&cs=tinysrgb&dpr=2&w=500"
+              src={PF+user.profilePic}
               alt=""
             />
           </Link>

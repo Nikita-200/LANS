@@ -27,7 +27,7 @@ mongoose.connect(process.env.MONGO_URL,{
 
 const storage = multer.diskStorage({
   destination:(req,file,cb) =>{
-    cb(null,"image")
+    cb(null,"images")
   },filename:(req,file,cb)=>{
     cb(null,req.body.name)
   }
@@ -43,7 +43,7 @@ app.use("/api/users", userRoute);
 app.use("/api/posts", postRoute);
 app.use("/api/categories", categoryRoute)
 
-app.listen("8000", ()=>{
+app.listen("8001", ()=>{
   console.log("backend is running")
 })
 

@@ -1,10 +1,13 @@
 import React,{ useState } from 'react';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+
 function Register() {
   const [username,setUsername]=useState("")
   const [email,setEmail]=useState("")
   const [password,setPassword]=useState("")
   const [error,setError]=useState(false)
+  const navigate =useNavigate()
 const handleSubmit=async(e)=>{
   e.preventDefault();
   setError(false);
@@ -14,7 +17,7 @@ const handleSubmit=async(e)=>{
     email,
     password,
   });
-  res.data && window.location.replace("/login");
+  res.data && navigate("/login");
 }catch(err){
   setError(true);
 }
@@ -39,7 +42,7 @@ const handleSubmit=async(e)=>{
         onChange={e=>setPassword(e.target.value)}/>
       </center>
       <center className='mt-3'>
-        <button className='text-white w-60 py-1 hover:bg-gradient-to-tr from-black to-blue-800  font-bold border rounded-lg shadow-gray-300 shadow-2xl hover:white content-center font-serif ease-out hover:translate-y-1 transition-all mt-2' type='submit' onSubmit={handleSubmit}>SignUp</button>
+        <button className='text-white w-60 py-1 hover:bg-gradient-to-tr from-black to-blue-800  font-bold border rounded-lg shadow-gray-300 shadow-2xl hover:white content-center font-serif ease-out hover:translate-y-1 transition-all mt-2' type='submit' onClick={handleSubmit}>SignUp</button>
       </center>
       {error && <span>something went wrong!</span>}
     </div>
