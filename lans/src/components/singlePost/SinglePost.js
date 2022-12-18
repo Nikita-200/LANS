@@ -6,16 +6,17 @@ import {RiDeleteBin6Line} from "react-icons/ri"
 import { useLocation } from 'react-router-dom';
 import { Link } from 'react-router-dom';
 import axios from 'axios';
+import { Context } from '../../context/Context';
 
 export default function SinglePost() {
   const location = useLocation()
   const path=location.pathname.split("/")[2]
-  // const { user } = useContext(Context);
+  const { user } = useContext(Context);
   const [post, setPost] = useState({});
   const [title, setTitle] = useState("");
   const [desc, setDesc] = useState("");
   const [updateMode, setUpdateMode] = useState(false);
-  const PF = "http://localhost:8000/images/";
+  const PF = "http://localhost:8001/images/";
   useEffect(() => {
     const getPost = async () => {
       const res = await axios.get("/posts/" + path);

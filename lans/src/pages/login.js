@@ -1,13 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import React, { useContext, useRef } from "react";
+import axios from "axios";
 
-import  { Context } from "../../context/Context";
+import  { Context } from "../context/Context"
 
 function Login() {
   const userRef= useRef();
   const passwordRef=useRef();
   const { dispatch, isFetching }=useContext(Context)
-
+  const navigate = useNavigate()
   const handleSubmit=async(e)=>{
 e.preventDefault();
 dispatch({type:"LOGIN_START"});
@@ -17,6 +18,7 @@ try{
     password: passwordRef.current.value,
   });
   dispatch({ type: "LOGIN_SUCCESS", payload: res.data});
+  navigate("/")
 }catch(err){
   dispatch({ type: "LOGIN_FAILURE"});
 }
