@@ -1,10 +1,13 @@
 import React,{ useState } from 'react';
+import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 function Register() {
   const [username,setUsername]=useState("")
   const [email,setEmail]=useState("")
   const [password,setPassword]=useState("")
   const [error,setError]=useState(false)
+  const navigate =useNavigate()
 const handleSubmit=async(e)=>{
   e.preventDefault();
   setError(false);
@@ -14,7 +17,7 @@ const handleSubmit=async(e)=>{
     email,
     password,
   });
-  res.data && window.location.replace("/login");
+  navigate("/login");
 }catch(err){
   setError(true);
 }
