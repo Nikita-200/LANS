@@ -37,14 +37,14 @@ const router=createBrowserRouter([
         path:"/",
         element:<Home/>
       },
-      // {
-      //   path:"/post/:id",
-      //   element:<Single/>
+      {
+        path:"/post/:id",
+        element:<Single/>
       },
       {
         path:"/write",
         element:<Write/>
-      // }
+       }
 
       
     ]
